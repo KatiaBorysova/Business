@@ -1,0 +1,115 @@
+.approach {
+    padding: 86px 0 94px;
+    background-color: #f3f3f3;
+
+    @media only screen and (max-width: 720px) {
+        padding: 45px 0 40px 0;
+    }
+
+    &__list {
+        counter-reset: count;
+
+    }
+    &__item {
+        margin-bottom: 40px;
+        border-radius: 5px;
+        box-shadow: -1px -1px 10px 1px rgba(214, 214, 214, 1);
+        color: #424244;
+        background-color: #fff;
+        display: flex;
+
+        @media only screen and (max-width: 720px) {
+            flex-direction: column;
+        }
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+            text-align: right;
+
+            @media only screen and (max-width: 720px) {
+                flex-direction: column;
+            }
+
+            .approach__step {
+                right: auto;
+                left: -6px;
+            }
+        }
+        
+    }
+    &__text {
+        display: inline-block;
+        vertical-align: top;
+        width: 64%;
+        padding: 70px 70px 55px 90px;
+
+        @media only screen and (max-width: 985px) {
+            padding: 25px 35px;
+        }
+        @media only screen and (max-width: 720px) {
+           width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__image {
+        position: relative;
+        max-width: 340px;
+        max-height: 236px;
+        display: inline-block;
+        vertical-align: top;
+
+        @media only screen and (max-width: 985px) {
+            max-width: calc(340px / 1.5);
+            max-height: calc(236px / 1.5);
+        }
+        @media only screen and (max-width: 720px) {
+           margin: auto;
+            display: block;
+        }
+    }
+
+    &__picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    &__step {
+        @include centerer-y();
+
+        position: absolute;
+        right: -88px;
+        width: 87px;
+        height: 87px;
+        padding-top: 7px;
+        border-radius: 5px;
+        border: 2px solid #fff;
+        text-align: center;
+        font-size: 1.25rem;
+        background-color: #de2b24;
+        color: #fff;
+
+        &::before {
+            content: counter(count);
+            counter-increment: count;
+            display: block;
+            font-family: $font-family-steps;
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        @media only screen and (max-width: 985px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 6px;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+    &__description {
+        line-height: 1.5;
+    }
+    
+}

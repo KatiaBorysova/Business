@@ -1,0 +1,47 @@
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "../../node_modules/normalize-scss/sass/normalize.scss";
+
+@import 'global/fonts';
+@import 'global/vars';
+@import 'global/mixins';
+@import 'sections/title';
+@import 'sections/button';
+@import 'sections/header';
+@import 'sections/hero';
+@import 'sections/about';
+@import 'sections/approach';
+@import 'sections/work';
+@import 'sections/form-section';
+@import 'sections/footer';
+
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: $font-family-main;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+ul, ol {
+    list-style-type: none;
+}
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.is-hidden {
+    display: none;
+}
+.visually-hidden {
+    text-indent: -999px;
+     font-size: 0;
+}
